@@ -1,19 +1,19 @@
 /******************************************************************************
-* °æÈ¨ËùÓĞ (C)2013£¬**********ÓĞÏŞ¹«Ë¾¡£
+* ç‰ˆæƒæ‰€æœ‰ (C)2013ï¼Œ**********æœ‰é™å…¬å¸ã€‚
 *
-* ÎÄ¼şÃû³Æ£ºKnxIp_core.h
-* ÎÄ¼ş±êÊ¶£ºÎŞ
-* ÄÚÈİÕªÒª£ºknx ip core header file.
-* ÆäËûËµÃ÷£º
-* µ±Ç°°æ±¾£ºV1.00
-* ×÷    Õß£º     
-* Íê³ÉÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
+* æ–‡ä»¶åç§°ï¼šKnxIp_core.h
+* æ–‡ä»¶æ ‡è¯†ï¼šæ— 
+* å†…å®¹æ‘˜è¦ï¼šknx ip core header file.
+* å…¶ä»–è¯´æ˜ï¼š
+* å½“å‰ç‰ˆæœ¬ï¼šV1.00
+* ä½œ    è€…ï¼š     
+* å®Œæˆæ—¥æœŸï¼š2014å¹´3æœˆ18æ—¥
 *    
-* ĞŞ¸Ä¼ÇÂ¼1£º
-*        ĞŞ¸ÄÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*        °æ ±¾ ºÅ£ºV1.00
-*        ĞŞ ¸Ä ÈË£º     
-*        ĞŞ¸ÄÄÚÈİ£º´´½¨ÎÄ¼ş
+* ä¿®æ”¹è®°å½•1ï¼š
+*        ä¿®æ”¹æ—¥æœŸï¼š2014å¹´3æœˆ18æ—¥
+*        ç‰ˆ æœ¬ å·ï¼šV1.00
+*        ä¿® æ”¹ äººï¼š     
+*        ä¿®æ”¹å†…å®¹ï¼šåˆ›å»ºæ–‡ä»¶
 ******************************************************************************/
 
 
@@ -67,9 +67,9 @@ extern "C" {
 #define KNX_BUFFER_FOR_IP            1   /* buffer used for KNX IP frame dealing. */
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_IP_DEV_REG
-*   ÃèÊö£º  register ip device to KnxIp link layer.
-*   ²ÎÊı£º  
+*   ç»“æ„åï¼šT_IP_DEV_REG
+*   æè¿°ï¼š  register ip device to KnxIp link layer.
+*   å‚æ•°ï¼š  
             BYTE ucSckNo                                                    socket's No,COM_MULTCAST_SCK_NO ~ COM_MULTCAST_SCK_USER_NO.    
             WORD16 wRxBufferNum;                                            buffer number for receiveing.
             WORD16 wTxBufferNum;                                            buffer number for sending.
@@ -93,10 +93,10 @@ extern "C" {
                      *pucBuffer - 2 : saving the destination device's port No[0];
                      *pucBuffer - 1 : saving the destination device's port No[1];
                 WORD16 wLength  : sent data length as byte.
-*   ×÷Õß: 
-*   ÆäËûËµÃ÷:
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ä½œè€…: 
+*   å…¶ä»–è¯´æ˜:
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ****************************************************/
 typedef struct
 {
@@ -109,9 +109,9 @@ typedef struct
 }T_IP_DEV_REG;
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_KNX_DEV
-*   ÃèÊö£º  KNX message device parameter¡£
-*   ²ÎÊı£º  
+*   ç»“æ„åï¼šT_KNX_DEV
+*   æè¿°ï¼š  KNX message device parameterã€‚
+*   å‚æ•°ï¼š  
             BYTE ucDevNo           device's physical No.    
             BYTE ucPoolId          device's pool id.        
             BYTE *puInBuffer       device's input buffer.   
@@ -135,9 +135,9 @@ typedef struct
                      *pucBuffer - 2 : saving the destination device's port No[0];
                      *pucBuffer - 1 : saving the destination device's port No[1];
                 WORD16 wLength  : sent data length as byte.
-*   ×÷Õß£º       
-*   ĞŞ¸Ä¼ÇÂ¼:
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ä½œè€…ï¼š       
+*   ä¿®æ”¹è®°å½•:
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ****************************************************/
 typedef struct
 {
@@ -150,15 +150,15 @@ typedef struct
 }T_KNX_DEV;
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_KNX_MSG_SRC
-*   ÃèÊö£º  the message source struct¡£
-*   ²ÎÊı£º  
+*   ç»“æ„åï¼šT_KNX_MSG_SRC
+*   æè¿°ï¼š  the message source structã€‚
+*   å‚æ•°ï¼š  
             BYTE ucTxPoolId     : sending buffer's pool ID.
             BYTE *pucTxBuffer   : sending buffer's chain.  
             T_KNX_DEV *ptKnxDev : relative KNX device.     
-*   ×÷Õß£º       
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ä½œè€…ï¼š       
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ****************************************************/
 typedef struct
 {
@@ -167,12 +167,12 @@ typedef struct
 }T_KNX_MSG_SRC;
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_INTERFACE_PARA
-*   ÃèÊö£º  the parameter of the interface.
-*   ²ÎÊı£º  ¼ûÏÂÃæ½á¹¹¶¨ÒåºÍ×¢ÊÍ£»
-*   ×÷Õß£º       
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ç»“æ„åï¼šT_INTERFACE_PARA
+*   æè¿°ï¼š  the parameter of the interface.
+*   å‚æ•°ï¼š  è§ä¸‹é¢ç»“æ„å®šä¹‰å’Œæ³¨é‡Šï¼›
+*   ä½œè€…ï¼š       
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ****************************************************/
 typedef struct
 {
@@ -189,12 +189,12 @@ typedef struct
 }T_INTERFACE_PARA;
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_INTERFACE_INFO
-*   ÃèÊö£º  the information of getting the interface.
-*   ²ÎÊı£º  ¼ûÏÂÃæ½á¹¹¶¨ÒåºÍ×¢ÊÍ£»
-*   ×÷Õß£º       
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ç»“æ„åï¼šT_INTERFACE_INFO
+*   æè¿°ï¼š  the information of getting the interface.
+*   å‚æ•°ï¼š  è§ä¸‹é¢ç»“æ„å®šä¹‰å’Œæ³¨é‡Šï¼›
+*   ä½œè€…ï¼š       
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ****************************************************/
 typedef struct
 {
@@ -203,9 +203,9 @@ typedef struct
 }T_INTERFACE_INFO;
 
 /*****************************************************************************************************
-*   ½á¹¹Ãû£ºT_KNX_APP_CMD
-*   ÃèÊö£º  the application send command to KNX-IP core.
-*   ²ÎÊı£º  
+*   ç»“æ„åï¼šT_KNX_APP_CMD
+*   æè¿°ï¼š  the application send command to KNX-IP core.
+*   å‚æ•°ï¼š  
             BYTE ucCmd:                   application command.
                  GROUP_DATA_READ
                  GROUP_DATA_WRITE
@@ -248,9 +248,9 @@ typedef struct
                  else if ucCmd == GROUP_DATA_WRITE
                     aucData[0...15]=group object's data(according to the format of the group object).
                  if end.
-*   ×÷Õß£º
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ä½œè€…ï¼š
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ******************************************************************************************************/
 typedef struct
 {
@@ -261,12 +261,12 @@ typedef struct
 }T_KNX_APP_CMD;
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_KNX_APP_LIST
-*   ÃèÊö£º  application command list sturct.
-*   ²ÎÊı£º  see the below structure define.
-*   ×÷Õß£º       
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ç»“æ„åï¼šT_KNX_APP_LIST
+*   æè¿°ï¼š  application command list sturct.
+*   å‚æ•°ï¼š  see the below structure define.
+*   ä½œè€…ï¼š       
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ****************************************************/
 typedef struct
 {
@@ -277,14 +277,14 @@ typedef struct
 }T_KNX_APP_LIST;
 
 /*******************************************************************************************************
-*   ½á¹¹Ãû£ºT_KNX_CORE_EVENT
-*   ÃèÊö£º  KNXÁ´½Ó·µ»ØÊÂ¼şÊı¾İ,ÓÃÓÚ·µ»ØÃüÁî½á¹û¡£
-*   ²ÎÊı£º  BYTE ucCmd:command ID;
+*   ç»“æ„åï¼šT_KNX_CORE_EVENT
+*   æè¿°ï¼š  KNXé“¾æ¥è¿”å›äº‹ä»¶æ•°æ®,ç”¨äºè¿”å›å‘½ä»¤ç»“æœã€‚
+*   å‚æ•°ï¼š  BYTE ucCmd:command ID;
                            GROUP_DATA_INDICATION    : receiving a group address data.
-                           SEARCH_REQUEST           : return the statua of searching request.
+                           SEARCH_REQUEST           : return the result of searching request.
                            CONNECT_REQUEST          : return the status of connection request.
                            DISCONNECT_REQUEST       : return the status of disconnection request.
-            BYTE ucCnectSt:·µ»ØµÄÁ´½Ó×´Ì¬£¬È¡ÖµÈçÏÂ:
+            BYTE ucCnectSt:è¿”å›çš„é“¾æ¥çŠ¶æ€ï¼Œå–å€¼å¦‚ä¸‹:
                            if(ucCmd == GROUP_DATA_INDICATION)
                            {
                                ucCnectSt will be:
@@ -298,21 +298,13 @@ typedef struct
                            }
             BYTE ucTxSeq : send sequence. 
             BYTE ucRxSeq : receive equence. 
-            BYTE ucLength: data length in byte for Grp.Obj. 
-                           if(ucLength==1)
-                           {
-                               actual data length = 1;
-                           }
-                           else
-                           {
-                               actual data length = ucLength - 1;
-                           }
+            BYTE ucLength: data length in aucData array.
             BYTE aucData[16]   : data buffer for saving data. 
             BYTE aucDestAddr[2]: destination address,such as group address.
             BYTE aucSrcAddr[2] : source device's address.
-*   ×÷Õß£º       
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ä½œè€…ï¼š       
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 *******************************************************************************************************/
 typedef struct
 {
@@ -327,12 +319,12 @@ typedef struct
 }T_KNX_CORE_EVENT;
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_KNX_IP_INIT_PARA
-*   ÃèÊö£º  Knx Ip³õÊ¼»¯²ÎÊı
-*   ²ÎÊı£º  ¼ûÏÂÃæ½á¹¹¶¨ÒåºÍ×¢ÊÍ£»
-*   ×÷Õß£º       
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ç»“æ„åï¼šT_KNX_IP_INIT_PARA
+*   æè¿°ï¼š  Knx Ipåˆå§‹åŒ–å‚æ•°
+*   å‚æ•°ï¼š  è§ä¸‹é¢ç»“æ„å®šä¹‰å’Œæ³¨é‡Šï¼›
+*   ä½œè€…ï¼š       
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ****************************************************/
 typedef struct
 {
@@ -348,18 +340,18 @@ typedef struct
 }T_KNX_IP_INIT_PARA;
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_KNX_BUFFER_HEADER
-*   ÃèÊö£º  KNX bufferµÄÍ·²¿¶¨Òå¡£
-*   ²ÎÊı£º  
+*   ç»“æ„åï¼šT_KNX_BUFFER_HEADER
+*   æè¿°ï¼š  KNX bufferçš„å¤´éƒ¨å®šä¹‰ã€‚
+*   å‚æ•°ï¼š  
 *           T_BUFFER_HEADER tBfHeader : buffer header.
 *           BYTE *pucPayload          :    payload address.
 *           BYTE ucLength;            :    payload length.
 *           BYTE ucMessInfo           :    message information.
 *           BYTE ucDevNo              :    device's No.
 *           BYTE aucAddData[6]        :    additional data.
-*   ×÷Õß£º       
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ä½œè€…ï¼š       
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ****************************************************/
 #pragma pack(1)
 typedef struct
@@ -374,146 +366,146 @@ typedef struct
 #pragma pack()
 
 /**************************************************************************************************************
-* º¯ÊıÃû³Æ£ºBYTE KnxMsg_GetDevTxPool(BYTE ucDevNo)
-* ¹¦ÄÜÃèÊö£ºget the device's tx pool id.
-* ÊäÈë²ÎÊı£ºBYTE ucDevNo : Bit3   - side flag;
+* å‡½æ•°åç§°ï¼šBYTE KnxMsg_GetDevTxPool(BYTE ucDevNo)
+* åŠŸèƒ½æè¿°ï¼šget the device's tx pool id.
+* è¾“å…¥å‚æ•°ï¼šBYTE ucDevNo : Bit3   - side flag;
                            Bit0~2 - device No.
-* ·µ »Ø Öµ£ºBYTE : Tx pool Id.
-* ÆäËüËµÃ÷£ºthis function can be used to get the tx pool Id by the device No.
-* ĞŞ¸ÄÈÕÆÚ     °æ±¾ºÅ     ĞŞ¸ÄÈË      ĞŞ¸ÄÄÚÈİ
+* è¿” å› å€¼ï¼šBYTE : Tx pool Id.
+* å…¶å®ƒè¯´æ˜ï¼šthis function can be used to get the tx pool Id by the device No.
+* ä¿®æ”¹æ—¥æœŸ     ç‰ˆæœ¬å·     ä¿®æ”¹äºº      ä¿®æ”¹å†…å®¹
 * -------------------------------------------------------------------------------------------------------------
-* 2014-03-20   V1.00                   ´´½¨
+* 2014-03-20   V1.00                   åˆ›å»º
 ***************************************************************************************************************/
 BYTE KnxMsg_GetDevTxPool(BYTE ucDevNo);
 
 /**************************************************************************************************************
-* º¯ÊıÃû³Æ£ºVOID Main_MsgProcess(VOID)
-* ¹¦ÄÜÃèÊö£ºKNXÏûÏ¢´¦Àí×ÜÈë¿Ú¡£
-* ÊäÈë²ÎÊı£ºno.
-* Êä³ö²ÎÊı£ºno.
-* ·µ »Ø Öµ£ºno.
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ     °æ±¾ºÅ     ĞŞ¸ÄÈË      ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šVOID Main_MsgProcess(VOID)
+* åŠŸèƒ½æè¿°ï¼šKNXæ¶ˆæ¯å¤„ç†æ€»å…¥å£ã€‚
+* è¾“å…¥å‚æ•°ï¼šno.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å› å€¼ï¼šno.
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ     ç‰ˆæœ¬å·     ä¿®æ”¹äºº      ä¿®æ”¹å†…å®¹
 * -------------------------------------------------------------------------------------------------------------
-* 2014-03-20   V1.00                   ´´½¨
+* 2014-03-20   V1.00                   åˆ›å»º
 ***************************************************************************************************************/
 VOID Main_MsgProcess(VOID);
 
 /**************************************************************************************************************
-* º¯ÊıÃû³Æ£ºVOID Knx_MsgInit(T_KNX_IP_INIT_PARA *ptCorePara)
-* ¹¦ÄÜÃèÊö£ºKNX message handler initialization.
-* ÊäÈë²ÎÊı£ºno.
-* Êä³ö²ÎÊı£ºno.
-* ·µ »Ø Öµ£ºno.
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ     °æ±¾ºÅ     ĞŞ¸ÄÈË      ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šVOID Knx_MsgInit(T_KNX_IP_INIT_PARA *ptCorePara)
+* åŠŸèƒ½æè¿°ï¼šKNX message handler initialization.
+* è¾“å…¥å‚æ•°ï¼šno.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å› å€¼ï¼šno.
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ     ç‰ˆæœ¬å·     ä¿®æ”¹äºº      ä¿®æ”¹å†…å®¹
 * -------------------------------------------------------------------------------------------------------------
-* 2014-03-20   V1.00                   ´´½¨
+* 2014-03-20   V1.00                   åˆ›å»º
 ***************************************************************************************************************/
 VOID Knx_MsgInit(T_KNX_IP_INIT_PARA *ptCorePara);
 
 /**************************************************************************
-* º¯ÊıÃû³Æ£ºBYTE* Knx_Buffer_Alloc(BYTE ucPoolId,BYTE ucUseFlg)
-* ¹¦ÄÜÃèÊö£º´Óbuffer×Ó³ØÖĞ·ÖÅäÒ»¸öbufferÓÃÓÚKnxÏûÏ¢´¦Àí¡£
-* ÊäÈë²ÎÊı£ºBYTE ucPoolId : pool Id.
+* å‡½æ•°åç§°ï¼šBYTE* Knx_Buffer_Alloc(BYTE ucPoolId,BYTE ucUseFlg)
+* åŠŸèƒ½æè¿°ï¼šä»bufferå­æ± ä¸­åˆ†é…ä¸€ä¸ªbufferç”¨äºKnxæ¶ˆæ¯å¤„ç†ã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE ucPoolId : pool Id.
             BYTE ucUseFlg : KNX_BUFFER_FOR_KNX
                             KNX_BUFFER_FOR_IP
-* Êä³ö²ÎÊı£ºÎŞ
-* ·µ »Ø Öµ£ºNULL  : buffer×Ó³Ø·ÖÅäÊ§°Ü
-                    ÆäËû£¬³É¹¦µÄbufferÖ¸Õë
-* ÆäËüËµÃ÷£º(1)KnxIP frame format is as below:
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å› å€¼ï¼šNULL  : bufferå­æ± åˆ†é…å¤±è´¥
+                    å…¶ä»–ï¼ŒæˆåŠŸçš„bufferæŒ‡é’ˆ
+* å…¶å®ƒè¯´æ˜ï¼š(1)KnxIP frame format is as below:
             |sizeof(WORDPTR) for next frame address|1byte for Pool Id|1byte KNX payload length|1byte Knx payload offset|socket No.|Ip&port|data...|
             (2)the return point pints to the buffer header saving the next buffer's address. 
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨  
+* 2014/03/18       V1.0                        åˆ›å»º  
 **************************************************************************/
 BYTE* Knx_Buffer_Alloc(BYTE ucPoolId,BYTE ucUseFlg);
 
 /**************************************************************************
-* º¯ÊıÃû³Æ£ºVOID Knx_Buffer_Chain(BYTE *pucPre,BYTE *pucNext)
-* ¹¦ÄÜÃèÊö£º½«pucNextÁ´µ½pucPre bufferºó¡£
-* ÊäÈë²ÎÊı£ºÎŞ.
-* Êä³ö²ÎÊı£ºÎŞ
-* ·µ »Ø Öµ£ºÎŞ.
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šVOID Knx_Buffer_Chain(BYTE *pucPre,BYTE *pucNext)
+* åŠŸèƒ½æè¿°ï¼šå°†pucNexté“¾åˆ°pucPre bufferåã€‚
+* è¾“å…¥å‚æ•°ï¼šæ— .
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å› å€¼ï¼šæ— .
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨  
+* 2014/03/18       V1.0                        åˆ›å»º  
 **************************************************************************/
 VOID Knx_Buffer_Chain(BYTE *pucPre,BYTE *pucNext);
 
 /**************************************************************************
-* º¯ÊıÃû³Æ£ºVOID KnxIp_Buffer_Free(BYTE ucPoolId,BYTE *pucBuffer)
-* ¹¦ÄÜÃèÊö£ºrelease the knxip buffer.
-* ÊäÈë²ÎÊı£ºBYTE ucPoolId : pool Id.
-* Êä³ö²ÎÊı£ºÎŞ
-* ·µ »Ø Öµ£ºNULL  : buffer×Ó³Ø·ÖÅäÊ§°Ü
-                    ÆäËû£¬³É¹¦µÄbufferÖ¸Õë
-* ÆäËüËµÃ÷£ºIn the main,we should check sg_pucWaitForFree cycally to release the
+* å‡½æ•°åç§°ï¼šVOID KnxIp_Buffer_Free(BYTE ucPoolId,BYTE *pucBuffer)
+* åŠŸèƒ½æè¿°ï¼šrelease the knxip buffer.
+* è¾“å…¥å‚æ•°ï¼šBYTE ucPoolId : pool Id.
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å› å€¼ï¼šNULL  : bufferå­æ± åˆ†é…å¤±è´¥
+                    å…¶ä»–ï¼ŒæˆåŠŸçš„bufferæŒ‡é’ˆ
+* å…¶å®ƒè¯´æ˜ï¼šIn the main,we should check sg_pucWaitForFree cycally to release the
                              buffer.
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨  
+* 2014/03/18       V1.0                        åˆ›å»º  
 **************************************************************************/
 VOID Knx_Buffer_Free(BYTE ucPoolId,BYTE *pucBuffer);
 
 /**************************************************************************************************************
-* º¯ÊıÃû³Æ£ºWORD32 Knx_MsgDev_Reg(BYTE ucSckNo,T_KNX_DEV *ptKnxDev,WORD16 wTxBufNum,WORD16 wBuffLen)
-* ¹¦ÄÜÃèÊö£ºKNXÏûÏ¢Ô´Éè±¸×¢²á½Ó¿Ú¡£
-* ÊäÈë²ÎÊı£ºBYTE ucSckNo        : register device's No.COM_MULTCAST_SCK_NO ~ COM_MULTCAST_SCK_USER_NO.
+* å‡½æ•°åç§°ï¼šWORD32 Knx_MsgDev_Reg(BYTE ucSckNo,T_KNX_DEV *ptKnxDev,WORD16 wTxBufNum,WORD16 wBuffLen)
+* åŠŸèƒ½æè¿°ï¼šKNXæ¶ˆæ¯æºè®¾å¤‡æ³¨å†Œæ¥å£ã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE ucSckNo        : register device's No.COM_MULTCAST_SCK_NO ~ COM_MULTCAST_SCK_USER_NO.
             T_KNX_DEV *ptKnxDev : discription structure of the register device.
             WORD16 wTxBufNum    : count of buffers for transmitting.
             WORD16 wBuffLen     : buffer size in byte.
-* Êä³ö²ÎÊı£ºno.
-* ·µ »Ø Öµ£ºSW_OK :successful
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å› å€¼ï¼šSW_OK :successful
             SW_ERR:failed.
-* ÆäËüËµÃ÷£º(1)the logical device No. begins with 0.
+* å…¶å®ƒè¯´æ˜ï¼š(1)the logical device No. begins with 0.
             (2)the device should be registered in sequence.
-* ĞŞ¸ÄÈÕÆÚ     °æ±¾ºÅ     ĞŞ¸ÄÈË      ĞŞ¸ÄÄÚÈİ
+* ä¿®æ”¹æ—¥æœŸ     ç‰ˆæœ¬å·     ä¿®æ”¹äºº      ä¿®æ”¹å†…å®¹
 * -------------------------------------------------------------------------------------------------------------
-* 2014-03-20   V1.00                   ´´½¨
+* 2014-03-20   V1.00                   åˆ›å»º
 ***************************************************************************************************************/
 WORD32 Knx_MsgDev_Reg(BYTE ucSckNo,T_KNX_DEV *ptKnxDev,WORD16 wTxBufNum,WORD16 wBuffLen);
 
 /**************************************************************************************************************
-* º¯ÊıÃû³Æ£ºBYTE KnxIp_Application_Cmd(T_KNX_APP_CMD *pAppCmd)
-* ¹¦ÄÜÃèÊö£ºapplication request handler.
-* ÊäÈë²ÎÊı£ºT_KNX_APP_CMD *pAppCmd : memory pointer of application command and it's parameter.
-* Êä³ö²ÎÊı£ºno.
-* ·µ »Ø Öµ£ºE_CMD_SUCCESSFUL :command is sucessful.
+* å‡½æ•°åç§°ï¼šBYTE KnxIp_Application_Cmd(T_KNX_APP_CMD *pAppCmd)
+* åŠŸèƒ½æè¿°ï¼šapplication request handler.
+* è¾“å…¥å‚æ•°ï¼šT_KNX_APP_CMD *pAppCmd : memory pointer of application command and it's parameter.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å› å€¼ï¼šE_CMD_SUCCESSFUL :command is sucessful.
             E_COMMAND_FAILED :command is failed.
-* ÆäËüËµÃ÷£ºwe only support send multicast frames by tunnelling.
-* ĞŞ¸ÄÈÕÆÚ     °æ±¾ºÅ     ĞŞ¸ÄÈË      ĞŞ¸ÄÄÚÈİ
+* å…¶å®ƒè¯´æ˜ï¼šwe only support send multicast frames by tunnelling.
+* ä¿®æ”¹æ—¥æœŸ     ç‰ˆæœ¬å·     ä¿®æ”¹äºº      ä¿®æ”¹å†…å®¹
 * -------------------------------------------------------------------------------------------------------------
-* 2014-03-20   V1.00                   ´´½¨
+* 2014-03-20   V1.00                   åˆ›å»º
 ***************************************************************************************************************/
 BYTE KnxIp_Application_Cmd(T_KNX_APP_CMD *pAppCmd);
 
 /**************************************************************************************************************
-* º¯ÊıÃû³Æ£ºT_INTERFACE_INFO *KnxIp_App_Get_InterfaceInfo(VOID)
-* ¹¦ÄÜÃèÊö£ºapplication get the KnxIp interfaces(routers) information connecting to this client.
-* ÊäÈë²ÎÊı£ºno.
-* Êä³ö²ÎÊı£ºno.
-* ·µ »Ø Öµ£ºT_INTERFACE_INFO *:information structure pointer.
-* ÆäËüËµÃ÷£ºAfter sending search request and waiting 10 seconds,we can use this function to get the interfaces 
+* å‡½æ•°åç§°ï¼šT_INTERFACE_INFO *KnxIp_App_Get_InterfaceInfo(VOID)
+* åŠŸèƒ½æè¿°ï¼šapplication get the KnxIp interfaces(routers) information connecting to this client.
+* è¾“å…¥å‚æ•°ï¼šno.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å› å€¼ï¼šT_INTERFACE_INFO *:information structure pointer.
+* å…¶å®ƒè¯´æ˜ï¼šAfter sending search request and waiting 10 seconds,we can use this function to get the interfaces 
             information.
-* ĞŞ¸ÄÈÕÆÚ     °æ±¾ºÅ     ĞŞ¸ÄÈË      ĞŞ¸ÄÄÚÈİ
+* ä¿®æ”¹æ—¥æœŸ     ç‰ˆæœ¬å·     ä¿®æ”¹äºº      ä¿®æ”¹å†…å®¹
 * -------------------------------------------------------------------------------------------------------------
-* 2014-03-20   V1.00                   ´´½¨
+* 2014-03-20   V1.00                   åˆ›å»º
 ***************************************************************************************************************/
 T_INTERFACE_INFO *KnxIp_App_Get_InterfaceInfo(VOID);
 
 /**************************************************************************************************************
-* º¯ÊıÃû³Æ£ºVOID Knx_MsgQuit(VOID)
-* ¹¦ÄÜÃèÊö£ºrelease all malloc resources.
-* ÊäÈë²ÎÊı£ºno.
-* Êä³ö²ÎÊı£ºno.
-* ·µ »Ø Öµ£ºno.
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ     °æ±¾ºÅ     ĞŞ¸ÄÈË      ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šVOID Knx_MsgQuit(VOID)
+* åŠŸèƒ½æè¿°ï¼šrelease all malloc resources.
+* è¾“å…¥å‚æ•°ï¼šno.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å› å€¼ï¼šno.
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ     ç‰ˆæœ¬å·     ä¿®æ”¹äºº      ä¿®æ”¹å†…å®¹
 * -------------------------------------------------------------------------------------------------------------
-* 2014-03-20   V1.00                   ´´½¨
+* 2014-03-20   V1.00                   åˆ›å»º
 ***************************************************************************************************************/
 VOID Knx_MsgQuit(VOID);
 
