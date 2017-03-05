@@ -1,20 +1,4 @@
-/******************************************************************************
-* °æÈ¨ËùÓĞ (C)2013£¬**********ÓĞÏŞ¹«Ë¾¡£
-*
-* ÎÄ¼şÃû³Æ£ºKnxIp_Msg.h
-* ÎÄ¼ş±êÊ¶£ºÎŞ
-* ÄÚÈİÕªÒª£ºknx ip message deal header file.
-* ÆäËûËµÃ÷£º
-* µ±Ç°°æ±¾£ºV1.00
-* ×÷    Õß£º     
-* Íê³ÉÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*    
-* ĞŞ¸Ä¼ÇÂ¼1£º
-*        ĞŞ¸ÄÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*        °æ ±¾ ºÅ£ºV1.00
-*        ĞŞ ¸Ä ÈË£º     
-*        ĞŞ¸ÄÄÚÈİ£º´´½¨ÎÄ¼ş
-******************************************************************************/
+
 
 
 #ifndef _KNXIP_MSG_H_
@@ -64,14 +48,14 @@ extern "C" {
 
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_IP_ADDRESS_INFO
-*   ÃèÊö£º  IpµÄµØÖ·ĞÅÏ¢(address information)
-*   ²ÎÊı£º  BYTE aucIpAddInfo[IP_ADDRESS_INFO_LEN]:
+*   ç»“æ„åï¼šT_IP_ADDRESS_INFO
+*   æè¿°ï¼š  Ipçš„åœ°å€ä¿¡æ¯(address information)
+*   å‚æ•°ï¼š  BYTE aucIpAddInfo[IP_ADDRESS_INFO_LEN]:
                                  0-3:ip address,high->low
                                  4-5:port number,high->low
-*   ×÷Õß£º       
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ä½œè€…ï¼š       
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ****************************************************/
 typedef struct
 {
@@ -79,30 +63,30 @@ typedef struct
 }T_IP_ADDRESS_INFO;
 
 /*******************************************************************************************
-* º¯ÊıÃû³Æ£ºKNXIP_BOOL KnxIp_Svr_Rsv(BYTE *pucBuffer,BYTE ucTxPoolId)
-* ¹¦ÄÜÃèÊö£ºKnx Ip È±Ê¡·şÎñ´¦ÀíÈë¿Ú¡£
-* ÊäÈë²ÎÊı£ºBYTE *pucBuffer:input frame buffer.
+* å‡½æ•°åç§°ï¼šKNXIP_BOOL KnxIp_Svr_Rsv(BYTE *pucBuffer,BYTE ucTxPoolId)
+* åŠŸèƒ½æè¿°ï¼šKnx Ip ç¼ºçœæœåŠ¡å¤„ç†å…¥å£ã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE *pucBuffer:input frame buffer.
             BYTE ucTxPoolId:pool id for transmit buffer.
-* Êä³ö²ÎÊı£ºÎŞ
-* ·µ »Ø Öµ£ºNULL.
-* ÆäËüËµÃ÷£ºpucBuffer points to the header of the buffer.
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å› å€¼ï¼šNULL.
+* å…¶å®ƒè¯´æ˜ï¼špucBuffer points to the header of the buffer.
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * -----------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 *******************************************************************************************/
 KNXIP_BOOL KnxIp_Svr_Rsv(BYTE *pucBuffer,BYTE ucTxPoolId);
 
 /****************************************************************************************************
-* º¯ÊıÃû³Æ£ºKNXIP_BOOL KnxIp_Msg_Handler(BYTE *pucInBuffer,BYTE ucTxPoolId)
-* ¹¦ÄÜÃèÊö£ºKnx Ip message´¦ÀíÈë¿Ú¡£
-* ÊäÈë²ÎÊı£ºBYTE *pucInBuffer:Ö¸ÏòKNX IP±¨ÎÄµÄÍ·²¿.
-            BYTE ucTxPoolId  :transmit bufferµÄPool ID.
-* Êä³ö²ÎÊı£ºNo.
-* ·µ »Ø Öµ£ºBYTE* ·µ»ØresponseµÄbuffer¡£µ÷ÓÃÕßĞèÒª´¦Àí´«ÈëbufferµÄÊÍ·Å¡£
-* ÆäËüËµÃ÷£ºpucBufferÖ¸ÏòbufferµÄ¹ÜÀíÍ·²¿¡£
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šKNXIP_BOOL KnxIp_Msg_Handler(BYTE *pucInBuffer,BYTE ucTxPoolId)
+* åŠŸèƒ½æè¿°ï¼šKnx Ip messageå¤„ç†å…¥å£ã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE *pucInBuffer:æŒ‡å‘KNX IPæŠ¥æ–‡çš„å¤´éƒ¨.
+            BYTE ucTxPoolId  :transmit bufferçš„Pool ID.
+* è¾“å‡ºå‚æ•°ï¼šNo.
+* è¿” å› å€¼ï¼šBYTE* è¿”å›responseçš„bufferã€‚è°ƒç”¨è€…éœ€è¦å¤„ç†ä¼ å…¥bufferçš„é‡Šæ”¾ã€‚
+* å…¶å®ƒè¯´æ˜ï¼špucBufferæŒ‡å‘bufferçš„ç®¡ç†å¤´éƒ¨ã€‚
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 KNXIP_BOOL KnxIp_Msg_Handler(BYTE *pucInBuffer,BYTE ucTxPoolId);
 
