@@ -1,20 +1,4 @@
-/******************************************************************************
-* °æÈ¨ËùÓÐ (C)2013£¬ÄÏ¾©**********¿ØÖÆÏµÍ³ÓÐÏÞ¹«Ë¾¡£
-*
-* ÎÄ¼þÃû³Æ£ºKnxIp_Ll.h
-* ÎÄ¼þ±êÊ¶£ºÎÞ
-* ÄÚÈÝÕªÒª£ºknx ip core header file.
-* ÆäËûËµÃ÷£º
-* µ±Ç°°æ±¾£ºV1.00
-* ×÷    Õß£º     
-* Íê³ÉÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*    
-* ÐÞ¸Ä¼ÇÂ¼1£º
-*        ÐÞ¸ÄÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*        °æ ±¾ ºÅ£ºV1.00
-*        ÐÞ ¸Ä ÈË£º     
-*        ÐÞ¸ÄÄÚÈÝ£º´´½¨ÎÄ¼þ
-******************************************************************************/
+
 
 
 #ifndef _KNXIP_LL_H_
@@ -30,66 +14,66 @@ extern "C" {
 #define KNXIP_TX_BUSY_OFF         0        /* we not need to send RT_BUSY_MSG frame. */
 
 /******************************************************************************************
-* º¯ÊýÃû³Æ£ºVOID KnxIp_Ll_Init(VOID)
-* ¹¦ÄÜÃèÊö£ºinit. the knx ip link layer parameter.
-* ÊäÈë²ÎÊý£ºno.
-* Êä³ö²ÎÊý£ºno.
-* ·µ »Ø Öµ£ºno.
-* ÆäËüËµÃ÷£ºno.
-* ÐÞ¸ÄÈÕÆÚ     °æ±¾ºÅ     ÐÞ¸ÄÈË      ÐÞ¸ÄÄÚÈÝ
+* å‡½æ•°åç§°ï¼šVOID KnxIp_Ll_Init(VOID)
+* åŠŸèƒ½æè¿°ï¼šinit. the knx ip link layer parameter.
+* è¾“å…¥å‚æ•°ï¼šno.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å›ž å€¼ï¼šno.
+* å…¶å®ƒè¯´æ˜Žï¼šno.
+* ä¿®æ”¹æ—¥æœŸ     ç‰ˆæœ¬å·     ä¿®æ”¹äºº      ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------
-* 2014-03-20   V1.00                   ´´½¨
+* 2014-03-20   V1.00                   åˆ›å»º
 ******************************************************************************************/
 VOID KnxIp_Ll_Init(VOID);
 
 /******************************************************************************************
-* º¯ÊýÃû³Æ£ºWORD32 KnxIp_Recv(VOID)
-* ¹¦ÄÜÃèÊö£ºReceive socket's data in polling way.It will poll all socket in turn.
-* ÊäÈë²ÎÊý£ºno.
-* Êä³ö²ÎÊý£ºno.
-* ·µ »Ø Öµ£ºno.
-* ÆäËüËµÃ÷£ºthis function will insert the input frame into the socket's receiving pool.
-* ÐÞ¸ÄÈÕÆÚ     °æ±¾ºÅ     ÐÞ¸ÄÈË      ÐÞ¸ÄÄÚÈÝ
+* å‡½æ•°åç§°ï¼šWORD32 KnxIp_Recv(VOID)
+* åŠŸèƒ½æè¿°ï¼šReceive socket's data in polling way.It will poll all socket in turn.
+* è¾“å…¥å‚æ•°ï¼šno.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å›ž å€¼ï¼šno.
+* å…¶å®ƒè¯´æ˜Žï¼šthis function will insert the input frame into the socket's receiving pool.
+* ä¿®æ”¹æ—¥æœŸ     ç‰ˆæœ¬å·     ä¿®æ”¹äºº      ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------
-* 2014-03-20   V1.00                   ´´½¨
+* 2014-03-20   V1.00                   åˆ›å»º
 ******************************************************************************************/
 VOID KnxIp_Recv(VOID);
 
 /******************************************************************************************
-* º¯ÊýÃû³Æ£ºVOID KnxIp_Send(VOID)
-* ¹¦ÄÜÃèÊö£ºSend socket's data in polling way.It will poll all socket in turn.
-* ÊäÈë²ÎÊý£ºno.
-* Êä³ö²ÎÊý£ºno.
-* ·µ »Ø Öµ£ºno.
-* ÆäËüËµÃ÷£º
-* ÐÞ¸ÄÈÕÆÚ     °æ±¾ºÅ     ÐÞ¸ÄÈË      ÐÞ¸ÄÄÚÈÝ
+* å‡½æ•°åç§°ï¼šVOID KnxIp_Send(VOID)
+* åŠŸèƒ½æè¿°ï¼šSend socket's data in polling way.It will poll all socket in turn.
+* è¾“å…¥å‚æ•°ï¼šno.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å›ž å€¼ï¼šno.
+* å…¶å®ƒè¯´æ˜Žï¼š
+* ä¿®æ”¹æ—¥æœŸ     ç‰ˆæœ¬å·     ä¿®æ”¹äºº      ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------
-* 2014-03-20   V1.00                   ´´½¨
+* 2014-03-20   V1.00                   åˆ›å»º
 ******************************************************************************************/
 VOID KnxIp_Send(VOID);
 
 /**************************************************************************************************************************
-* º¯ÊýÃû³Æ£ºWORD32 KnxIp_SckReg(T_IP_DEV_REG tIpDevReg)
-* ¹¦ÄÜÃèÊö£ºÏòKNX IpÁ´Â·²ã×¢²áSocket£¬socketºÅ´Ó0¿ªÊ¼£¬°´Ðò½øÐÐ×¢²á¡£
-* ÊäÈë²ÎÊý£ºT_IP_DEV_REG tIpDevReg:×¢²áµÄsocketÉè±¸ÃèÊö,
-                BYTE ucDevNo                                       socketºÅ,COM_MULTCAST_SCK_NO ~ COM_MULTCAST_SCK_USER_NO.    
-                WORD16 wRxBufferNum                                ÓÃÓÚ½ÓÊÕµÄbuffer¸öÊý.
-                WORD16 wTxBufferNum                                ÓÃÓÚ·¢ËÍµÄbuffer¸öÊý.
-                WORD16 wBufferSize                                 Ã¿¸öbufferµÄ³¤¶È.
-                WORD16 (*pfReceive)(BYTE ucDevNo,BYTE *pucBuffer)  Éè±¸µÄ½ÓÊÕº¯Êý
-                    BYTE ucDevNo    : socketºÅ,´Ó0¿ªÊ¼. 
-                    BYTE *pucBuffer : ½ÓÊÕµÄÊý¾Ý´æ·ÅµÄbufferÖ¸Õë.
-                WORD16 (*pfSend)(BYTE ucDevNo,BYTE *pucBuffer,WORD16 wLength) Éè±¸µÄ·¢ËÍº¯Êý
-                    BYTE ucDevNo    : socketºÅ,´Ó0¿ªÊ¼.
-                    BYTE *pucBuffer : ·¢ËÍÊý¾ÝµÄ´æ·ÅbufferÖ¸Õë.
-                    WORD16 wLength  : ·¢ËÍÊý¾ÝµÄ³¤¶È.
-* Êä³ö²ÎÊý£º
-* ·µ »Ø Öµ£ºSW_OK £º×¢²á³É¹¦£»
-            SW_ERR£º×¢²áÊ§°Ü£»
-* ÆäËüËµÃ÷:
-* ÐÞ¸ÄÈÕÆÚ     °æ±¾ºÅ     ÐÞ¸ÄÈË      ÐÞ¸ÄÄÚÈÝ
+* å‡½æ•°åç§°ï¼šWORD32 KnxIp_SckReg(T_IP_DEV_REG tIpDevReg)
+* åŠŸèƒ½æè¿°ï¼šå‘KNX Ipé“¾è·¯å±‚æ³¨å†ŒSocketï¼Œsocketå·ä»Ž0å¼€å§‹ï¼ŒæŒ‰åºè¿›è¡Œæ³¨å†Œã€‚
+* è¾“å…¥å‚æ•°ï¼šT_IP_DEV_REG tIpDevReg:æ³¨å†Œçš„socketè®¾å¤‡æè¿°,
+                BYTE ucDevNo                                       socketå·,COM_MULTCAST_SCK_NO ~ COM_MULTCAST_SCK_USER_NO.    
+                WORD16 wRxBufferNum                                ç”¨äºŽæŽ¥æ”¶çš„bufferä¸ªæ•°.
+                WORD16 wTxBufferNum                                ç”¨äºŽå‘é€çš„bufferä¸ªæ•°.
+                WORD16 wBufferSize                                 æ¯ä¸ªbufferçš„é•¿åº¦.
+                WORD16 (*pfReceive)(BYTE ucDevNo,BYTE *pucBuffer)  è®¾å¤‡çš„æŽ¥æ”¶å‡½æ•°
+                    BYTE ucDevNo    : socketå·,ä»Ž0å¼€å§‹. 
+                    BYTE *pucBuffer : æŽ¥æ”¶çš„æ•°æ®å­˜æ”¾çš„bufferæŒ‡é’ˆ.
+                WORD16 (*pfSend)(BYTE ucDevNo,BYTE *pucBuffer,WORD16 wLength) è®¾å¤‡çš„å‘é€å‡½æ•°
+                    BYTE ucDevNo    : socketå·,ä»Ž0å¼€å§‹.
+                    BYTE *pucBuffer : å‘é€æ•°æ®çš„å­˜æ”¾bufferæŒ‡é’ˆ.
+                    WORD16 wLength  : å‘é€æ•°æ®çš„é•¿åº¦.
+* è¾“å‡ºå‚æ•°ï¼š
+* è¿” å›ž å€¼ï¼šSW_OK ï¼šæ³¨å†ŒæˆåŠŸï¼›
+            SW_ERRï¼šæ³¨å†Œå¤±è´¥ï¼›
+* å…¶å®ƒè¯´æ˜Ž:
+* ä¿®æ”¹æ—¥æœŸ     ç‰ˆæœ¬å·     ä¿®æ”¹äºº      ä¿®æ”¹å†…å®¹
 * -------------------------------------------------------------------------------------------------------------------------
-* 2014-03-20   V1.00                   ´´½¨
+* 2014-03-20   V1.00                   åˆ›å»º
 ***************************************************************************************************************************/
 WORD32 KnxIp_SckReg(T_IP_DEV_REG *ptIpDevReg);
 
