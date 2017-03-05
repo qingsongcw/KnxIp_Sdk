@@ -1,20 +1,4 @@
-/******************************************************************************
-* °æÈ¨ËùÓĞ (C)2013£¬**********ÓĞÏŞ¹«Ë¾¡£
-*
-* ÎÄ¼şÃû³Æ£ºKnxIp_Routing.h
-* ÎÄ¼ş±êÊ¶£ºÎŞ
-* ÄÚÈİÕªÒª£ºknx ip route header file.
-* ÆäËûËµÃ÷£º
-* µ±Ç°°æ±¾£ºV1.00
-* ×÷    Õß£º     
-* Íê³ÉÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*    
-* ĞŞ¸Ä¼ÇÂ¼1£º
-*        ĞŞ¸ÄÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*        °æ ±¾ ºÅ£ºV1.00
-*        ĞŞ ¸Ä ÈË£º     
-*        ĞŞ¸ÄÄÚÈİ£º´´½¨ÎÄ¼ş
-******************************************************************************/
+
 
 
 #ifndef _KNXIP_ROUTING_H_
@@ -61,83 +45,83 @@ extern "C" {
 
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºVOID KnxIp_RtBusy_Req(BYTE *pucInBuffer)
-* ¹¦ÄÜÃèÊö£ºcreat Knx Ip routing busy require.
-* ÊäÈë²ÎÊı£ºBYTE *pucInBuffer  : point to the header of the buffer.
-* Êä³ö²ÎÊı£ºno.
-* ·µ »Ø Öµ£ºno.
-* ÆäËüËµÃ÷£ºthe caller should set the buffer's destination device's number and the source device number.
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šVOID KnxIp_RtBusy_Req(BYTE *pucInBuffer)
+* åŠŸèƒ½æè¿°ï¼šcreat Knx Ip routing busy require.
+* è¾“å…¥å‚æ•°ï¼šBYTE *pucInBuffer  : point to the header of the buffer.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å› å€¼ï¼šno.
+* å…¶å®ƒè¯´æ˜ï¼šthe caller should set the buffer's destination device's number and the source device number.
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 VOID KnxIp_RtBusy_Req(BYTE *pucInBuffer);
 
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºKNXIP_BOOL KnxIp_Svr_Route(BYTE *pucInBuffer,BYTE ucTxPoolId)
-* ¹¦ÄÜÃèÊö£ºKnx Ip routing handler.
-* ÊäÈë²ÎÊı£ºBYTE *pucInBuffer  : point to the header of the buffer.
-            BYTE ucTxPoolId   : bufferµÄÔ´pool ID.
-* Êä³ö²ÎÊı£º
-* ·µ »Ø Öµ£ºBYTE* ·µ»ØresponseµÄbuffer£¬·µ»ØNULLÎŞresponse¡£µ÷ÓÃÕßĞèÒª´¦Àí´«ÈëbufferµÄÊÍ·Å¡£
-* ÆäËüËµÃ÷£ºpucBufferÖ¸Ïòinput bufferµÄ¹ÜÀíÍ·²¿¡£
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šKNXIP_BOOL KnxIp_Svr_Route(BYTE *pucInBuffer,BYTE ucTxPoolId)
+* åŠŸèƒ½æè¿°ï¼šKnx Ip routing handler.
+* è¾“å…¥å‚æ•°ï¼šBYTE *pucInBuffer  : point to the header of the buffer.
+            BYTE ucTxPoolId   : bufferçš„æºpool ID.
+* è¾“å‡ºå‚æ•°ï¼š
+* è¿” å› å€¼ï¼šBYTE* è¿”å›responseçš„bufferï¼Œè¿”å›NULLæ— responseã€‚è°ƒç”¨è€…éœ€è¦å¤„ç†ä¼ å…¥bufferçš„é‡Šæ”¾ã€‚
+* å…¶å®ƒè¯´æ˜ï¼špucBufferæŒ‡å‘input bufferçš„ç®¡ç†å¤´éƒ¨ã€‚
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 KNXIP_BOOL KnxIp_Svr_Route(BYTE *pucInBuffer,BYTE ucTxPoolId);
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºVOID KnxIp_RouteCtrl(VOID)
-* ¹¦ÄÜÃèÊö£ºControl routing function working according to the resume time.
-* ÊäÈë²ÎÊı£ºno.
-* Êä³ö²ÎÊı£ºno.
-* ·µ »Ø Öµ£ºno.
-* ÆäËüËµÃ÷£ºThis function should be called periodically.
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šVOID KnxIp_RouteCtrl(VOID)
+* åŠŸèƒ½æè¿°ï¼šControl routing function working according to the resume time.
+* è¾“å…¥å‚æ•°ï¼šno.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å› å€¼ï¼šno.
+* å…¶å®ƒè¯´æ˜ï¼šThis function should be called periodically.
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                       ´´½¨ 
+* 2014/03/18       V1.0                       åˆ›å»º 
 ******************************************************************************************************/
 VOID KnxIp_RouteCtrl(VOID);
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºBYTE *KnxIp_GetRtMgmDownFrame(VOID)
-* ¹¦ÄÜÃèÊö£ºget routing management down frames.
-* ÊäÈë²ÎÊı£ºno.
-* Êä³ö²ÎÊı£ºno.
-* ·µ »Ø Öµ£ºNULL / freme buffer pointer.
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šBYTE *KnxIp_GetRtMgmDownFrame(VOID)
+* åŠŸèƒ½æè¿°ï¼šget routing management down frames.
+* è¾“å…¥å‚æ•°ï¼šno.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å› å€¼ï¼šNULL / freme buffer pointer.
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 BYTE *KnxIp_GetRtMgmDownFrame(VOID);
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºKNXIP_BOOL KnxIp_Svr_Route_Req(BYTE *pucInBuffer)
-* ¹¦ÄÜÃèÊö£ºcreat Knx Ip routing indication require.
-* ÊäÈë²ÎÊı£ºBYTE *pucInBuffer  : point to the header of the buffer.
-* Êä³ö²ÎÊı£ºno.
-* ·µ »Ø Öµ£ºTRUE : route it successfully.
+* å‡½æ•°åç§°ï¼šKNXIP_BOOL KnxIp_Svr_Route_Req(BYTE *pucInBuffer)
+* åŠŸèƒ½æè¿°ï¼šcreat Knx Ip routing indication require.
+* è¾“å…¥å‚æ•°ï¼šBYTE *pucInBuffer  : point to the header of the buffer.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å› å€¼ï¼šTRUE : route it successfully.
             FALSE: route it failed(can not route it).
-* ÆäËüËµÃ÷£ºthe caller should set the buffer's destination device's number and the source device number.
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å…¶å®ƒè¯´æ˜ï¼šthe caller should set the buffer's destination device's number and the source device number.
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 KNXIP_BOOL KnxIp_Svr_Route_Req(BYTE *pucInBuffer);
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºVOID KnxIp_Route_Init(T_KNX_IP_CORE_PARA *ptCoreData)
-* ¹¦ÄÜÃèÊö£ºrouting function initialization.
-* ÊäÈë²ÎÊı£ºT_KNX_IP_CORE_PARA *ptCoreDat:KNX IP core parameter.
-* Êä³ö²ÎÊı£ºÎŞ
-* ·µ »Ø Öµ£ºÎŞ
-* ÆäËüËµÃ÷£ºthis function will be called by Knxip_core
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šVOID KnxIp_Route_Init(T_KNX_IP_CORE_PARA *ptCoreData)
+* åŠŸèƒ½æè¿°ï¼šrouting function initialization.
+* è¾“å…¥å‚æ•°ï¼šT_KNX_IP_CORE_PARA *ptCoreDat:KNX IP core parameter.
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å› å€¼ï¼šæ— 
+* å…¶å®ƒè¯´æ˜ï¼šthis function will be called by Knxip_core
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 VOID KnxIp_Route_Init(T_KNX_IP_CORE_PARA *ptCoreData);
 
