@@ -52,7 +52,7 @@ static T_INTERFACE_INFO *g_ptKnxIpInterFaceInfo = NULL; /* for saving the search
 
 /* In file configure.h
 (1) define MCU_SIZE               : setting this macro value according to the CPU.
-(2) define MAX_KNX_APP_CMD_NUM    : SDK have a command queue,it keeps the command sent by application.this macro
+(2) define MAX_KNX_APP_CMD_NUM    : SDK has a command queue,it keeps the command sent by application.this macro
                                     defines the max. number of the command can be kept by SDK.
 (3) define TOTAL_BUFFER_SIZE      : SDK have a buffer pool used for frames handling.this macro defines the memory
                                     size used by buffer pool.
@@ -116,7 +116,7 @@ void App_Create_50Ms_Task(void)
 {
     if(0 == g_i50MsTimerId)
     {
-        g_i50MsTimerId = timeSetEvent(50,1,Timer50Ms_Count,0,TIME_PERIODIC);  /* creat a 50ms period task,it will call Timer50Ms_Count periodically. */
+        g_i50MsTimerId = timeSetEvent(50,1,Timer50Ms_Count,0,TIME_PERIODIC);  /* create a 50ms period task,it will call Timer50Ms_Count periodically. */
     }
 }
 
@@ -135,7 +135,7 @@ void App_Create_Sdk_Task(void)
 {
     if(0 == g_i100MsTimerId)
     {
-        g_i100MsTimerId = timeSetEvent(100,1,KnxIpSdk_Process,0,TIME_PERIODIC); /* creat a 100ms period task,it will call KnxIpSdk_Process perildically. */
+        g_i100MsTimerId = timeSetEvent(100,1,KnxIpSdk_Process,0,TIME_PERIODIC); /* create a 100ms period task,it will call KnxIpSdk_Process perildically. */
     }
 }
 
