@@ -102,7 +102,7 @@ void CALLBACK KnxIpSdk_Process(UINT uId,UINT uMsg,DWORD dUser,DWORD dW1,DWORD dW
 }
 
 /*****************************************************************************************************
-* function name   : void App_Creat_50Ms_Task(void)
+* function name   : void App_Create_50Ms_Task(void)
 * Description     : this function creat the 50ms timer and start the 50ms counting task.
 * Input parameter : no.
 * Output parameter: no.
@@ -112,7 +112,7 @@ void CALLBACK KnxIpSdk_Process(UINT uId,UINT uMsg,DWORD dUser,DWORD dW1,DWORD dW
 * ----------------------------------------------------------------------------------------------------
 * 2017-03-01      V1.00                 Creation
 ******************************************************************************************************/
-void App_Creat_50Ms_Task(void)
+void App_Create_50Ms_Task(void)
 {
     if(0 == g_i50MsTimerId)
     {
@@ -121,7 +121,7 @@ void App_Creat_50Ms_Task(void)
 }
 
 /*****************************************************************************************************
-* function name   : void App_Creat_Sdk_Task(void)
+* function name   : void App_Create_Sdk_Task(void)
 * Description     : this function creat SDK task running in 100ms period.
 * Input parameter : no.
 * Output parameter: no.
@@ -131,7 +131,7 @@ void App_Creat_50Ms_Task(void)
 * -----------------------------------------------------------------------------------------------------
 * 2017-03-01      V1.00                 Creation
 ******************************************************************************************************/
-void App_Creat_Sdk_Task(void)
+void App_Create_Sdk_Task(void)
 {
     if(0 == g_i100MsTimerId)
     {
@@ -477,12 +477,12 @@ void Application_Start_Init(void)
         KnxIp_SckReg(&tIpDevReg);
         
         /* start 50ms timer task. */
-        App_Creat_50Ms_Task();
+        App_Create_50Ms_Task();
         /* start SDK task. */
-        App_Creat_Sdk_Task();
+        App_Create_Sdk_Task();
         
         
-        /* next : application can creat itself task. */
+        /* next : application can create itself task. */
         /*** Application task creat..... **/
     }
 
