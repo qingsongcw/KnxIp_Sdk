@@ -1,20 +1,4 @@
-/******************************************************************************
-* °æÈ¨ËùÓĞ (C)2013£¬**********ÓĞÏŞ¹«Ë¾¡£
-*
-* ÎÄ¼şÃû³Æ£ºKnxIp_Tunnel.h
-* ÎÄ¼ş±êÊ¶£ºÎŞ
-* ÄÚÈİÕªÒª£ºknx ip tunneling header file.
-* ÆäËûËµÃ÷£º
-* µ±Ç°°æ±¾£ºV1.00
-* ×÷    Õß£º     
-* Íê³ÉÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*    
-* ĞŞ¸Ä¼ÇÂ¼1£º
-*        ĞŞ¸ÄÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*        °æ ±¾ ºÅ£ºV1.00
-*        ĞŞ ¸Ä ÈË£º     
-*        ĞŞ¸ÄÄÚÈİ£º´´½¨ÎÄ¼ş
-******************************************************************************/
+
 
 
 #ifndef _KNXIP_TUNNEL_H_
@@ -43,59 +27,59 @@ extern "C" {
 
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºVOID KnxIp_Tunnel_Init(T_KNX_IP_CORE_PARA *ptCoreData)
-* ¹¦ÄÜÃèÊö£ºDevice management initialization.
-* ÊäÈë²ÎÊı£ºBYTE ucPrtNo:Knx ports number.
+* å‡½æ•°åç§°ï¼šVOID KnxIp_Tunnel_Init(T_KNX_IP_CORE_PARA *ptCoreData)
+* åŠŸèƒ½æè¿°ï¼šDevice management initialization.
+* è¾“å…¥å‚æ•°ï¼šBYTE ucPrtNo:Knx ports number.
             T_KNX_IP_CORE_PARA *ptCoreDat:KNX IP core parameter.
-* Êä³ö²ÎÊı£ºÎŞ
-* ·µ »Ø Öµ£ºÎŞ
-* ÆäËüËµÃ÷£ºthis function will be called by Knxip_core
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å› å€¼ï¼šæ— 
+* å…¶å®ƒè¯´æ˜ï¼šthis function will be called by Knxip_core
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 VOID KnxIp_Tunnel_Init(T_KNX_IP_CORE_PARA *ptCoreData);
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºKNXIP_BOOL KnxIp_Svr_Tunnel(BYTE *pucInBuffer,BYTE ucSrcPoolId)
-* ¹¦ÄÜÃèÊö£ºKnx Ip tunnelling ´¦ÀíÈë¿Ú¡£
-* ÊäÈë²ÎÊı£ºBYTE *pucInBuffer: point to the header of buffer.
-            BYTE ucSrcPoolId : bufferµÄÔ´pool ID.
-* Êä³ö²ÎÊı£º
-* ·µ »Ø Öµ£ºBYTE* ·µ»ØresponseµÄbuffer£¬·µ»ØNULLÎŞresponse.
+* å‡½æ•°åç§°ï¼šKNXIP_BOOL KnxIp_Svr_Tunnel(BYTE *pucInBuffer,BYTE ucSrcPoolId)
+* åŠŸèƒ½æè¿°ï¼šKnx Ip tunnelling å¤„ç†å…¥å£ã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE *pucInBuffer: point to the header of buffer.
+            BYTE ucSrcPoolId : bufferçš„æºpool ID.
+* è¾“å‡ºå‚æ•°ï¼š
+* è¿” å› å€¼ï¼šBYTE* è¿”å›responseçš„bufferï¼Œè¿”å›NULLæ— response.
             if return NULL,the caller should release the input buffer.
             if return the response buffer,the caller should not release the input buffer.
-* ÆäËüËµÃ÷£ºpucBufferÖ¸ÏòbufferµÄÍ·²¿¡£
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å…¶å®ƒè¯´æ˜ï¼špucBufferæŒ‡å‘bufferçš„å¤´éƒ¨ã€‚
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 KNXIP_BOOL KnxIp_Svr_Tunnel(BYTE *pucInBuffer,BYTE ucSrcPoolId);
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºVOID KnxIp_Tunnel_DisCnect(BYTE *pucIn,BYTE ucCnectId,T_KNXIP_PORT_PARA *ptPtrPara)
-* ¹¦ÄÜÃèÊö£ºDevice management disconnection handle,set the data for mgm disconnection response.
-* ÊäÈë²ÎÊı£ºBYTE ucCnectId :connection ID
+* å‡½æ•°åç§°ï¼šVOID KnxIp_Tunnel_DisCnect(BYTE *pucIn,BYTE ucCnectId,T_KNXIP_PORT_PARA *ptPtrPara)
+* åŠŸèƒ½æè¿°ï¼šDevice management disconnection handle,set the data for mgm disconnection response.
+* è¾“å…¥å‚æ•°ï¼šBYTE ucCnectId :connection ID
             T_KNXIP_PORT_PARA *ptPtrPara:port's parameter.
-* Êä³ö²ÎÊı£ºBYTE *pucBuffer:response frame data.
-* ·µ »Ø Öµ£ºVOID
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* è¾“å‡ºå‚æ•°ï¼šBYTE *pucBuffer:response frame data.
+* è¿” å› å€¼ï¼šVOID
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 VOID KnxIp_Tunnel_DisCnect(BYTE ucCnectId,T_KNXIP_CNECT_PARA *ptPtrPara);
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºBYTE KnxIp_Svr_Tnl_Req(BYTE *pucInBuffer)
-* ¹¦ÄÜÃèÊö£ºKnx Ip Éú³Étunnelling requireÈë¿Ú¡£
-* ÊäÈë²ÎÊı£ºBYTE *pucInBuffer: point to the header of buffer.
-* Êä³ö²ÎÊı£º
-* ·µ »Ø Öµ£ºE_COMMAND_FAILED/E_CMD_SUCCESSFUL.
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šBYTE KnxIp_Svr_Tnl_Req(BYTE *pucInBuffer)
+* åŠŸèƒ½æè¿°ï¼šKnx Ip ç”Ÿæˆtunnelling requireå…¥å£ã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE *pucInBuffer: point to the header of buffer.
+* è¾“å‡ºå‚æ•°ï¼š
+* è¿” å› å€¼ï¼šE_COMMAND_FAILED/E_CMD_SUCCESSFUL.
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 BYTE KnxIp_Svr_Tnl_Req(BYTE *pucInBuffer);
 
