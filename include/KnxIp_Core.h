@@ -1,20 +1,4 @@
-/******************************************************************************
-* °æÈ¨ËùÓĞ (C)2013£¬**********ÓĞÏŞ¹«Ë¾¡£
-*
-* ÎÄ¼şÃû³Æ£ºKnxIp_core.h
-* ÎÄ¼ş±êÊ¶£ºÎŞ
-* ÄÚÈİÕªÒª£ºknx ip core header file.
-* ÆäËûËµÃ÷£º
-* µ±Ç°°æ±¾£ºV1.00
-* ×÷    Õß£º     
-* Íê³ÉÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*    
-* ĞŞ¸Ä¼ÇÂ¼1£º
-*        ĞŞ¸ÄÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*        °æ ±¾ ºÅ£ºV1.00
-*        ĞŞ ¸Ä ÈË£º     
-*        ĞŞ¸ÄÄÚÈİ£º´´½¨ÎÄ¼ş
-******************************************************************************/
+
 
 
 #ifndef _KNXIP_CORE_H_
@@ -91,7 +75,7 @@ extern "C" {
 #define CONNECTION_ALIVE_TIME                (120000)/* s If the KNXnet/IP Server does not receive a heartbeat \
                                                          request within 120 seconds of the last correctly received message frame, \
                                                          the server shall terminate the connection by sending a DISCONNECT_REQUEST to
-                                                         the client¡¯s control endpoint. */
+                                                         the clientâ€™s control endpoint. */
 #define CONNECT_STATUS_CYCLE                 (20000) /* 20 seconds every heart beat. */
     /* The start port number for control&data endpoint. */
 #define KNX_IP_PORT_NUMBER                   (3671)        /* port number used for tcp/ip */
@@ -251,12 +235,12 @@ extern "C" {
 
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_KNXIP_CNECT_PARA
-*   ÃèÊö£º  Knx IpÁ¬½Ó²ÎÊı
-*   ²ÎÊı£º  ¼ûÏÂÃæ½á¹¹¶¨ÒåºÍ×¢ÊÍ£»
-*   ×÷Õß£º       
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ç»“æ„åï¼šT_KNXIP_CNECT_PARA
+*   æè¿°ï¼š  Knx Ipè¿æ¥å‚æ•°
+*   å‚æ•°ï¼š  è§ä¸‹é¢ç»“æ„å®šä¹‰å’Œæ³¨é‡Šï¼›
+*   ä½œè€…ï¼š       
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ****************************************************/
 typedef struct
 {
@@ -279,12 +263,12 @@ typedef struct
 }T_KNXIP_CNECT_PARA;
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_KNX_IP_CORE_PARA
-*   ÃèÊö£º  Knx Ip core ²ÎÊı
-*   ²ÎÊı£º  ¼ûÏÂÃæ½á¹¹¶¨ÒåºÍ×¢ÊÍ£»
-*   ×÷Õß£º       
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ç»“æ„åï¼šT_KNX_IP_CORE_PARA
+*   æè¿°ï¼š  Knx Ip core å‚æ•°
+*   å‚æ•°ï¼š  è§ä¸‹é¢ç»“æ„å®šä¹‰å’Œæ³¨é‡Šï¼›
+*   ä½œè€…ï¼š       
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ****************************************************/
 typedef struct
 {
@@ -301,12 +285,12 @@ typedef struct
 }T_KNX_IP_CORE_PARA;
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_KNXIP_CNECT_REQ_PARA
-*   ÃèÊö£º  input parameter for knxip connection establish.
-*   ²ÎÊı£º
-*   ×÷Õß£º       
-*   ĞŞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ĞÂÔö½á¹¹£»
+*   ç»“æ„åï¼šT_KNXIP_CNECT_REQ_PARA
+*   æè¿°ï¼š  input parameter for knxip connection establish.
+*   å‚æ•°ï¼š
+*   ä½œè€…ï¼š       
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢ç»“æ„ï¼›
 ****************************************************/
 typedef struct
 {
@@ -316,182 +300,182 @@ typedef struct
 }T_KNXIP_CNECT_REQ_PARA;
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºVOID KnxIp_Init_Core(T_KNX_IP_INIT_PARA *ptCorePara)
-* ¹¦ÄÜÃèÊö£ºKnx Ip core ³õÊ¼»¯¡£
-* ÊäÈë²ÎÊı£ºT_KNX_IP_INIT_PARA *ptCorePara
-                               ->ucKnxPrtNum:KNX¶Ë¿ÚµÄ¸öÊı
-                               ->aucIp[4]   :±¾»úIPµØÖ·
-* Êä³ö²ÎÊı£ºÎŞ
-* ·µ »Ø Öµ£ºÎŞ
-* ÆäËüËµÃ÷£ºÎŞ
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šVOID KnxIp_Init_Core(T_KNX_IP_INIT_PARA *ptCorePara)
+* åŠŸèƒ½æè¿°ï¼šKnx Ip core åˆå§‹åŒ–ã€‚
+* è¾“å…¥å‚æ•°ï¼šT_KNX_IP_INIT_PARA *ptCorePara
+                               ->ucKnxPrtNum:KNXç«¯å£çš„ä¸ªæ•°
+                               ->aucIp[4]   :æœ¬æœºIPåœ°å€
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å› å€¼ï¼šæ— 
+* å…¶å®ƒè¯´æ˜ï¼šæ— 
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 VOID KnxIp_Init_Core(T_KNX_IP_INIT_PARA *ptCorePara);
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºBYTE KnxIp_Svr_Core(BYTE *pucInBuffer,BYTE ucSrcPoolId)
-* ¹¦ÄÜÃèÊö£ºKnx Ip core ´¦ÀíÈë¿Ú¡£
-* ÊäÈë²ÎÊı£ºBYTE *pucInBuffer  : point to the header of the buffer.
-            BYTE ucSrcPoolId   : bufferµÄÔ´pool ID.
-* Êä³ö²ÎÊı£º
-* ·µ »Ø Öµ£ºBYTE* ·µ»ØresponseµÄbuffer£¬·µ»ØNULLÎŞresponse¡£µ÷ÓÃÕßĞèÒª´¦Àí´«ÈëbufferµÄÊÍ·Å¡£
-* ÆäËüËµÃ÷£ºpucBufferÖ¸Ïòinput bufferµÄ¹ÜÀíÍ·²¿¡£
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šBYTE KnxIp_Svr_Core(BYTE *pucInBuffer,BYTE ucSrcPoolId)
+* åŠŸèƒ½æè¿°ï¼šKnx Ip core å¤„ç†å…¥å£ã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE *pucInBuffer  : point to the header of the buffer.
+            BYTE ucSrcPoolId   : bufferçš„æºpool ID.
+* è¾“å‡ºå‚æ•°ï¼š
+* è¿” å› å€¼ï¼šBYTE* è¿”å›responseçš„bufferï¼Œè¿”å›NULLæ— responseã€‚è°ƒç”¨è€…éœ€è¦å¤„ç†ä¼ å…¥bufferçš„é‡Šæ”¾ã€‚
+* å…¶å®ƒè¯´æ˜ï¼špucBufferæŒ‡å‘input bufferçš„ç®¡ç†å¤´éƒ¨ã€‚
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 BYTE KnxIp_Svr_Core(BYTE *pucInBuffer,BYTE ucSrcPoolId);
 
 /****************************************************************************************************
-* º¯ÊıÃû³Æ£ºBYTE KnxIp_Core_Req_Search(BYTE ucTxPoolId)
-* ¹¦ÄÜÃèÊö£ºKnx Ip core search require command set handler.
-* ÊäÈë²ÎÊı£ºBYTE ucTxPoolId :pool ID for transmitting.
-* Êä³ö²ÎÊı£º
-* ·µ »Ø Öµ£ºreturn E_CMD_SUCCESSFUL/E_COMMAND_FAILED/E_CONNECT_ACTIVE.
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šBYTE KnxIp_Core_Req_Search(BYTE ucTxPoolId)
+* åŠŸèƒ½æè¿°ï¼šKnx Ip core search require command set handler.
+* è¾“å…¥å‚æ•°ï¼šBYTE ucTxPoolId :pool ID for transmitting.
+* è¾“å‡ºå‚æ•°ï¼š
+* è¿” å› å€¼ï¼šreturn E_CMD_SUCCESSFUL/E_COMMAND_FAILED/E_CONNECT_ACTIVE.
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 BYTE KnxIp_Core_Req_Search(BYTE ucTxPoolId);
 
 /****************************************************************************************************
-* º¯ÊıÃû³Æ£ºBYTE *KnxIp_Core_Read_CnectOut(VOID)
-* ¹¦ÄÜÃèÊö£º»ñÈ¡KNX IPÁ¬½ÓÍ¨µÀµÄÊä³ö±¨ÎÄ¡£
-* ÊäÈë²ÎÊı£º
-* Êä³ö²ÎÊı£º
-* ·µ »Ø Öµ£º´ı´¦ÀíµÄbufferÁ´Ê×µØÖ·.NULL±íÊ¾ÎŞ´ı´¦Àíbuffer¡£
-* ÆäËüËµÃ÷£º·µ»ØÒ»¸ö´ı·¢ËÍµÄbufferÁ´¡£
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šBYTE *KnxIp_Core_Read_CnectOut(VOID)
+* åŠŸèƒ½æè¿°ï¼šè·å–KNX IPè¿æ¥é€šé“çš„è¾“å‡ºæŠ¥æ–‡ã€‚
+* è¾“å…¥å‚æ•°ï¼š
+* è¾“å‡ºå‚æ•°ï¼š
+* è¿” å› å€¼ï¼šå¾…å¤„ç†çš„bufferé“¾é¦–åœ°å€.NULLè¡¨ç¤ºæ— å¾…å¤„ç†bufferã€‚
+* å…¶å®ƒè¯´æ˜ï¼šè¿”å›ä¸€ä¸ªå¾…å‘é€çš„bufferé“¾ã€‚
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 BYTE *KnxIp_Core_Read_CnectOut(VOID);
 
 /****************************************************************************************************
-* º¯ÊıÃû³Æ£ºBYTE KnxIp_Core_Req_Connect(BYTE ucTxPoolId,T_KNXIP_CNECT_REQ_PARA *ptCntReqPara)
-* ¹¦ÄÜÃèÊö£ºKnx Ip core connect require command set handler.
-* ÊäÈë²ÎÊı£ºBYTE ucTxPoolId :pool ID for transmitting.
+* å‡½æ•°åç§°ï¼šBYTE KnxIp_Core_Req_Connect(BYTE ucTxPoolId,T_KNXIP_CNECT_REQ_PARA *ptCntReqPara)
+* åŠŸèƒ½æè¿°ï¼šKnx Ip core connect require command set handler.
+* è¾“å…¥å‚æ•°ï¼šBYTE ucTxPoolId :pool ID for transmitting.
             T_KNXIP_CNECT_REQ_PARA *ptCntReqPara:point to the connection parameter.
-* Êä³ö²ÎÊı£º
-* ·µ »Ø Öµ£ºreturn E_COMMAND_FAILED/E_CMD_SUCCESSFUL/E_CONNECT_ACTIVE/E_COMMAND_PARA.
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* è¾“å‡ºå‚æ•°ï¼š
+* è¿” å› å€¼ï¼šreturn E_COMMAND_FAILED/E_CMD_SUCCESSFUL/E_CONNECT_ACTIVE/E_COMMAND_PARA.
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 BYTE KnxIp_Core_Req_Connect(BYTE ucTxPoolId,T_KNXIP_CNECT_REQ_PARA *ptCntReqPara);
 
 /****************************************************************************************************
-* º¯ÊıÃû³Æ£ºBYTE KnxIp_Core_Req_Discnt(BYTE ucTxPoolId)
-* ¹¦ÄÜÃèÊö£ºKnx Ip core disconnect requireÃüÁî´¦ÀíÈë¿Ú¡£
-* ÊäÈë²ÎÊı£ºBYTE ucTxPoolId :pool ID for transmitting.
-* Êä³ö²ÎÊı£º
-* ·µ »Ø Öµ£ºreturn  E_COMMAND_FAILED/E_CMD_SUCCESSFUL/E_CONNECT_ACTIVE/E_COMMAND_PARA.
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šBYTE KnxIp_Core_Req_Discnt(BYTE ucTxPoolId)
+* åŠŸèƒ½æè¿°ï¼šKnx Ip core disconnect requireå‘½ä»¤å¤„ç†å…¥å£ã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE ucTxPoolId :pool ID for transmitting.
+* è¾“å‡ºå‚æ•°ï¼š
+* è¿” å› å€¼ï¼šreturn  E_COMMAND_FAILED/E_CMD_SUCCESSFUL/E_CONNECT_ACTIVE/E_COMMAND_PARA.
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 BYTE KnxIp_Core_Req_Discnt(BYTE ucTxPoolId);
 
 /****************************************************************************************************
-* º¯ÊıÃû³Æ£ºBYTE KnxIp_Core_Req_CnectStus(BYTE ucCnectId,BYTE ucTxPoolId)
-* ¹¦ÄÜÃèÊö£ºKnx Ip core connect status requireÃüÁî´¦ÀíÈë¿Ú¡£
-* ÊäÈë²ÎÊı£ºBYTE ucCnectId  :connection ID.
+* å‡½æ•°åç§°ï¼šBYTE KnxIp_Core_Req_CnectStus(BYTE ucCnectId,BYTE ucTxPoolId)
+* åŠŸèƒ½æè¿°ï¼šKnx Ip core connect status requireå‘½ä»¤å¤„ç†å…¥å£ã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE ucCnectId  :connection ID.
             BYTE ucTxPoolId :pool ID for transmitting.
-* Êä³ö²ÎÊı£º
-* ·µ »Ø Öµ£ºreturn  E_COMMAND_FAILED/E_CMD_SUCCESSFUL/E_CONNECT_ACTIVE/E_COMMAND_PARA.
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* è¾“å‡ºå‚æ•°ï¼š
+* è¿” å› å€¼ï¼šreturn  E_COMMAND_FAILED/E_CMD_SUCCESSFUL/E_CONNECT_ACTIVE/E_COMMAND_PARA.
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 BYTE KnxIp_Core_Req_CnectStus(BYTE ucCnectId,BYTE ucTxPoolId);
 
 /****************************************************************************************************
-* º¯ÊıÃû³Æ£ºVOID KnxIp_Core_RunProcess(VOID)
-* ¹¦ÄÜÃèÊö£ºthe main loop of knxip core.
-* ÊäÈë²ÎÊı£ºnone.
-* Êä³ö²ÎÊı£ºnone.
-* ·µ »Ø Öµ£ºnone.
-* ÆäËüËµÃ÷£ºnone.
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šVOID KnxIp_Core_RunProcess(VOID)
+* åŠŸèƒ½æè¿°ï¼šthe main loop of knxip core.
+* è¾“å…¥å‚æ•°ï¼šnone.
+* è¾“å‡ºå‚æ•°ï¼šnone.
+* è¿” å› å€¼ï¼šnone.
+* å…¶å®ƒè¯´æ˜ï¼šnone.
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 VOID KnxIp_Core_RunProcess(VOID);
 
 /*****************************************************************
-* º¯ÊıÃû³Æ£ºVOID KnxIp_Frame_Extract(BYTE *pucBuffer,BYTE ucFlag)
-* ¹¦ÄÜÃèÊö£ºextract the frame data.
-* ÊäÈë²ÎÊı£ºBYTE *pucBuffer:frame buffer pointer.
+* å‡½æ•°åç§°ï¼šVOID KnxIp_Frame_Extract(BYTE *pucBuffer,BYTE ucFlag)
+* åŠŸèƒ½æè¿°ï¼šextract the frame data.
+* è¾“å…¥å‚æ•°ï¼šBYTE *pucBuffer:frame buffer pointer.
             BYTE ucFlag    :ROUTING_INDICATION/TUNNELING_REQUEST
-* Êä³ö²ÎÊı£ºnone.
-* ·µ »Ø Öµ£ºnone.
-* ÆäËüËµÃ÷£ºnone.
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* è¾“å‡ºå‚æ•°ï¼šnone.
+* è¿” å› å€¼ï¼šnone.
+* å…¶å®ƒè¯´æ˜ï¼šnone.
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ---------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 *****************************************************************/
 VOID KnxIp_Frame_Extract(BYTE *pucBuffer,BYTE ucFlag);
 
 /***************************************************************************************************
-* º¯ÊıÃû³Æ£ºWORD32 KnxIp_GrpValue_Read(BYTE *pucGrpAddr,BYTE ucTxPoolId)
-* ¹¦ÄÜÃèÊö£ºread a group address value.
-* ÊäÈë²ÎÊı£ºBYTE *pucGrpAddr:group address pointer.
+* å‡½æ•°åç§°ï¼šWORD32 KnxIp_GrpValue_Read(BYTE *pucGrpAddr,BYTE ucTxPoolId)
+* åŠŸèƒ½æè¿°ï¼šread a group address value.
+* è¾“å…¥å‚æ•°ï¼šBYTE *pucGrpAddr:group address pointer.
             BYTE ucTxPoolId :tx pool id.
-* Êä³ö²ÎÊı£ºnone.
-* ·µ »Ø Öµ£ºSW_OK/SW_ERR.
-* ÆäËüËµÃ÷£ºnone.
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* è¾“å‡ºå‚æ•°ï¼šnone.
+* è¿” å› å€¼ï¼šSW_OK/SW_ERR.
+* å…¶å®ƒè¯´æ˜ï¼šnone.
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * -------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ***************************************************************************************************/
 BYTE KnxIp_GrpValue_Read(BYTE *pucGrpAddr,BYTE ucTxPoolId);
 
 /***************************************************************************************************
-* º¯ÊıÃû³Æ£ºBYTE KnxIp_GrpValue_Write(BYTE *pucGrpAddr,BYTE ucLen,BYTE *pucData,BYTE ucTxPoolId)
-* ¹¦ÄÜÃèÊö£ºread a group address value.
-* ÊäÈë²ÎÊı£ºBYTE *pucGrpAddr:group address pointer.
+* å‡½æ•°åç§°ï¼šBYTE KnxIp_GrpValue_Write(BYTE *pucGrpAddr,BYTE ucLen,BYTE *pucData,BYTE ucTxPoolId)
+* åŠŸèƒ½æè¿°ï¼šread a group address value.
+* è¾“å…¥å‚æ•°ï¼šBYTE *pucGrpAddr:group address pointer.
             BYTE ucLen      :data lenght in byte.
             BYTE *pucData   :data pointer.
             BYTE ucTxPoolId :tx pool id.
-* Êä³ö²ÎÊı£ºnone.
-* ·µ »Ø Öµ£ºSW_OK/SW_ERR.
-* ÆäËüËµÃ÷£ºnone.
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* è¾“å‡ºå‚æ•°ï¼šnone.
+* è¿” å› å€¼ï¼šSW_OK/SW_ERR.
+* å…¶å®ƒè¯´æ˜ï¼šnone.
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * -------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ***************************************************************************************************/
 BYTE KnxIp_GrpValue_Write(BYTE *pucGrpAddr,BYTE ucLen,BYTE *pucData,BYTE ucTxPoolId);
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºT_INTERFACE_INFO *KnxIp_Core_GetInterface(VOID)
-* ¹¦ÄÜÃèÊö£ºreturn the KnxIp interfaces(routers) information connecting to this client.
-* ÊäÈë²ÎÊı£ºno.
-* Êä³ö²ÎÊı£ºno.
-* ·µ »Ø Öµ£ºT_INTERFACE_INFO * pointer pointing to the information structure.
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* å‡½æ•°åç§°ï¼šT_INTERFACE_INFO *KnxIp_Core_GetInterface(VOID)
+* åŠŸèƒ½æè¿°ï¼šreturn the KnxIp interfaces(routers) information connecting to this client.
+* è¾“å…¥å‚æ•°ï¼šno.
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å› å€¼ï¼šT_INTERFACE_INFO * pointer pointing to the information structure.
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 T_INTERFACE_INFO *KnxIp_Core_GetInterface(VOID);
 
 /******************************************************************************************************
-* º¯ÊıÃû³Æ£ºVOID KnxIp_Core_SetRemoteIP(BYTE ucFlag,BYTE *pucBuffer)
-* ¹¦ÄÜÃèÊö£ºset remote device's ip address and port into buffer.
-* ÊäÈë²ÎÊı£ºBYTE ucFlag:KNXIP_CTRL_POINT/KNXIP_DATA_POINT
+* å‡½æ•°åç§°ï¼šVOID KnxIp_Core_SetRemoteIP(BYTE ucFlag,BYTE *pucBuffer)
+* åŠŸèƒ½æè¿°ï¼šset remote device's ip address and port into buffer.
+* è¾“å…¥å‚æ•°ï¼šBYTE ucFlag:KNXIP_CTRL_POINT/KNXIP_DATA_POINT
             BYTE *pucBuffer:buffer pointer.
-* Êä³ö²ÎÊı£ºno.
-* ·µ »Ø Öµ£ºno.
-* ÆäËüËµÃ÷£º
-* ĞŞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ĞŞ¸ÄÈË          ĞŞ¸ÄÄÚÈİ
+* è¾“å‡ºå‚æ•°ï¼šno.
+* è¿” å› å€¼ï¼šno.
+* å…¶å®ƒè¯´æ˜ï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ----------------------------------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨ 
+* 2014/03/18       V1.0                        åˆ›å»º 
 ******************************************************************************************************/
 VOID KnxIp_Core_SetRemoteIP(BYTE ucFlag,BYTE *pucBuffer);
 
