@@ -1,20 +1,4 @@
-/******************************************************************************
-* °æÈ¨ËùÓÐ (C)2013£¬**********ÓÐÏÞ¹«Ë¾¡£
-*
-* ÎÄ¼þÃû³Æ£ºbuffer.h
-* ÎÄ¼þ±êÊ¶£ºÎÞ
-* ÄÚÈÝÕªÒª£º»º³åÇø¹ÜÀíÍ·ÎÄ¼þ
-* ÆäËûËµÃ÷£º
-* µ±Ç°°æ±¾£ºV1.00
-* ×÷    Õß£º     
-* Íê³ÉÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*    
-* ÐÞ¸Ä¼ÇÂ¼1£º
-*        ÐÞ¸ÄÈÕÆÚ£º2014Äê3ÔÂ18ÈÕ
-*        °æ ±¾ ºÅ£ºV1.00
-*        ÐÞ ¸Ä ÈË£º     
-*        ÐÞ¸ÄÄÚÈÝ£º´´½¨ÎÄ¼þ
-******************************************************************************/
+
 
 
 #ifndef _BUFFER_H_
@@ -47,9 +31,9 @@ extern "C" {
 #define CLR_POOL_IN_FLAG          (0xFB)    /* release input flag.  */
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_BUFFER_MGM
-*   ÃèÊö£º  buffer¹ÜÀí½á¹¹
-*   ²ÎÊý£º  
+*   ç»“æž„åï¼šT_BUFFER_MGM
+*   æè¿°ï¼š  bufferç®¡ç†ç»“æž„
+*   å‚æ•°ï¼š  
     BYTE    ucUseFlg;              Bit0:alloc Pool's flag
                                    Bit1:free pool's flag
                                    Bit2:In buffer's flag
@@ -57,16 +41,16 @@ extern "C" {
     BYTE    *pucPoolEnd;           the current free buffer end  
     BYTE    *pucBufferIn;          the buffer for input         
     BYTE    *pucBufLastIn;         the last in buffer           
-*   ×÷Õß£º       
-*   ËµÃ÷:
+*   ä½œè€…ï¼š       
+*   è¯´æ˜Ž:
        (1) buffer frame format is as below:
               |sizeof(WORDPTR)|1 byte for pool ID| data ....|
        (2) buffer size shold be >= (Max. data size + sizeof(WORDPTR) + 1)
        (3) the byte for pool ID in frame is defined as below:
               bit0~bit3:the source pool's ID;
               bit4~bit7:the destination pool's ID;
-*   ÐÞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ÐÂÔö½á¹¹£»
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢žç»“æž„ï¼›
 ****************************************************/
 typedef struct
 {
@@ -80,13 +64,13 @@ typedef struct
 }T_BUFFER_MGM;
 
 /****************************************************
-*   ½á¹¹Ãû£ºT_BUFFER_HEADER
-*   ÃèÊö£º  bufferÍ·²¿
-*   ²ÎÊý£º  
+*   ç»“æž„åï¼šT_BUFFER_HEADER
+*   æè¿°ï¼š  bufferå¤´éƒ¨
+*   å‚æ•°ï¼š  
             BYTE *pucNext : next buffer's address.
             BYTE ucPoolId : buffer's pool ID.
-*   ÐÞ¸Ä¼ÇÂ¼£º
-*   2013-7-24         ÐÂÔö½á¹¹£»
+*   ä¿®æ”¹è®°å½•ï¼š
+*   2013-7-24         æ–°å¢žç»“æž„ï¼›
 ****************************************************/
 #pragma pack(1)
 typedef struct
@@ -97,101 +81,101 @@ typedef struct
 #pragma pack()
 
 /**************************************************************************
-* º¯ÊýÃû³Æ£ºVOID Buffer_Pool_Init(VOID)
-* ¹¦ÄÜÃèÊö£º³õÊ¼»¯buffer³Ø¡£
-* ÊäÈë²ÎÊý£ºÎÞ
-* Êä³ö²ÎÊý£ºÎÞ
-* ·µ »Ø Öµ£ºÎÞ
-* ÆäËüËµÃ÷£º
-* ÐÞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ÐÞ¸ÄÈË          ÐÞ¸ÄÄÚÈÝ
+* å‡½æ•°åç§°ï¼šVOID Buffer_Pool_Init(VOID)
+* åŠŸèƒ½æè¿°ï¼šåˆå§‹åŒ–bufferæ± ã€‚
+* è¾“å…¥å‚æ•°ï¼šæ— 
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å›ž å€¼ï¼šæ— 
+* å…¶å®ƒè¯´æ˜Žï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨  
+* 2014/03/18       V1.0                        åˆ›å»º  
 **************************************************************************/
 VOID Buffer_Pool_Init(VOID);
 
 /**************************************************************************
-* º¯ÊýÃû³Æ£ºBYTE Buffer_Pool_Alloc(WORD16 wBufferSize,WORD16 wBufferNum)
-* ¹¦ÄÜÃèÊö£º´Óbuffer×Ü³ØÖÐ·ÖÅäÒ»¶Îbuffer×Ó³Ø£¬×Ó³ØµÄ´óÐ¡Îªbuffer³¤¶ÈºÍ¸öÊý
-            µÄ³Ë»ý¡£
-* ÊäÈë²ÎÊý£ºWORD16 wBufferSize : Ò»¸öbufferµÄ´óÐ¡
-            WORD16 wBufferNum  : bufferµÄ¸öÊý
-* Êä³ö²ÎÊý£ºÎÞ
-* ·µ »Ø Öµ£ºPOOL_ID_NULL  : buffer×Ó³Ø·ÖÅäÊ§°Ü
-                            ÆäËûÎª·ÖÅä³É¹¦ºóµÄPOOL ID
-* ÆäËüËµÃ÷£ºwBufferSize > sizeof(WORDPTR) + 1
-* ÐÞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ÐÞ¸ÄÈË          ÐÞ¸ÄÄÚÈÝ
+* å‡½æ•°åç§°ï¼šBYTE Buffer_Pool_Alloc(WORD16 wBufferSize,WORD16 wBufferNum)
+* åŠŸèƒ½æè¿°ï¼šä»Žbufferæ€»æ± ä¸­åˆ†é…ä¸€æ®µbufferå­æ± ï¼Œå­æ± çš„å¤§å°ä¸ºbufferé•¿åº¦å’Œä¸ªæ•°
+            çš„ä¹˜ç§¯ã€‚
+* è¾“å…¥å‚æ•°ï¼šWORD16 wBufferSize : ä¸€ä¸ªbufferçš„å¤§å°
+            WORD16 wBufferNum  : bufferçš„ä¸ªæ•°
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å›ž å€¼ï¼šPOOL_ID_NULL  : bufferå­æ± åˆ†é…å¤±è´¥
+                            å…¶ä»–ä¸ºåˆ†é…æˆåŠŸåŽçš„POOL ID
+* å…¶å®ƒè¯´æ˜Žï¼šwBufferSize > sizeof(WORDPTR) + 1
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨  
+* 2014/03/18       V1.0                        åˆ›å»º  
 **************************************************************************/
 BYTE Buffer_Pool_Alloc(WORD16 wBufferSize,WORD16 wBufferNum);
 
 /**************************************************************************
-* º¯ÊýÃû³Æ£ºBYTE* Buffer_Alloc(BYTE ucPoolId)
-* ¹¦ÄÜÃèÊö£º´Óbuffer×Ó³ØÖÐ·ÖÅäÒ»¸öbuffer¡£
-* ÊäÈë²ÎÊý£ºBYTE ucPoolId : pool Id.
-* Êä³ö²ÎÊý£ºÎÞ
-* ·µ »Ø Öµ£ºNULL  : buffer×Ó³Ø·ÖÅäÊ§°Ü
-                    ÆäËû£¬³É¹¦µÄbufferÖ¸Õë
-* ÆäËüËµÃ÷£º
-* ÐÞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ÐÞ¸ÄÈË          ÐÞ¸ÄÄÚÈÝ
+* å‡½æ•°åç§°ï¼šBYTE* Buffer_Alloc(BYTE ucPoolId)
+* åŠŸèƒ½æè¿°ï¼šä»Žbufferå­æ± ä¸­åˆ†é…ä¸€ä¸ªbufferã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE ucPoolId : pool Id.
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å›ž å€¼ï¼šNULL  : bufferå­æ± åˆ†é…å¤±è´¥
+                    å…¶ä»–ï¼ŒæˆåŠŸçš„bufferæŒ‡é’ˆ
+* å…¶å®ƒè¯´æ˜Žï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨  
+* 2014/03/18       V1.0                        åˆ›å»º  
 **************************************************************************/
 BYTE* Buffer_Alloc(BYTE ucPoolId);
 
 /**************************************************************************
-* º¯ÊýÃû³Æ£ºBYTE* Buffer_Free(BYTE ucPoolId)
-* ¹¦ÄÜÃèÊö£ºÊÍ·ÅÒ»¸öbuffer»ØpoolÖÐ¡£
-* ÊäÈë²ÎÊý£ºBYTE ucPoolId : pool Id.
-* Êä³ö²ÎÊý£ºÎÞ
-* ·µ »Ø Öµ£ºNULL  : buffer×Ó³ØÊÍ·ÅÊ§°Ü
-                    ÊÍ·Å³É¹¦£¬·µ»Ø×Ó³ØÊ×buffer
-* ÆäËüËµÃ÷£º´æÔÚº¯ÊýÖØÈëµÄÇé¿öÏÂ£¬·µ»ØÖµ²»ÄÜ×÷Îªbuffer³ØµÄÊ×µØÖ·½øÐÐ¼ÆËã¡£
-* ÐÞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ÐÞ¸ÄÈË          ÐÞ¸ÄÄÚÈÝ
+* å‡½æ•°åç§°ï¼šBYTE* Buffer_Free(BYTE ucPoolId)
+* åŠŸèƒ½æè¿°ï¼šé‡Šæ”¾ä¸€ä¸ªbufferå›žpoolä¸­ã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE ucPoolId : pool Id.
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å›ž å€¼ï¼šNULL  : bufferå­æ± é‡Šæ”¾å¤±è´¥
+                    é‡Šæ”¾æˆåŠŸï¼Œè¿”å›žå­æ± é¦–buffer
+* å…¶å®ƒè¯´æ˜Žï¼šå­˜åœ¨å‡½æ•°é‡å…¥çš„æƒ…å†µä¸‹ï¼Œè¿”å›žå€¼ä¸èƒ½ä½œä¸ºbufferæ± çš„é¦–åœ°å€è¿›è¡Œè®¡ç®—ã€‚
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨  
+* 2014/03/18       V1.0                        åˆ›å»º  
 **************************************************************************/
 BYTE* Buffer_Free(BYTE ucPoolId,BYTE *pucBuffer);
 
 /**************************************************************************
-* º¯ÊýÃû³Æ£ºBYTE* Buffer_Insert(BYTE ucPoolId,BYTE *pucBuffer)
-* ¹¦ÄÜÃèÊö£ºÏòbufferÁ´ÖÐ²åÈëÒ»¸öbuffer¡£
-* ÊäÈë²ÎÊý£ºBYTE ucPoolId : pool Id.
+* å‡½æ•°åç§°ï¼šBYTE* Buffer_Insert(BYTE ucPoolId,BYTE *pucBuffer)
+* åŠŸèƒ½æè¿°ï¼šå‘bufferé“¾ä¸­æ’å…¥ä¸€ä¸ªbufferã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE ucPoolId : pool Id.
             BYTE *pucBuffer:buffer.
-* Êä³ö²ÎÊý£ºÎÞ
-* ·µ »Ø Öµ£ºNULL  : ²åÈëbufferÊ§°Ü
-                    ²åÈë³É¹¦£¬·µ»Øµ±Ç°buffer³ØÊ×buffer¡£
-* ÆäËüËµÃ÷£º´æÔÚº¯ÊýÖØÈëµÄÇé¿öÏÂ£¬·µ»ØÖµ²»ÄÜ×÷ÎªbufferÁ´µÄÊ×µØÖ·½øÐÐ¼ÆËã¡£
-* ÐÞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ÐÞ¸ÄÈË          ÐÞ¸ÄÄÚÈÝ
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å›ž å€¼ï¼šNULL  : æ’å…¥bufferå¤±è´¥
+                    æ’å…¥æˆåŠŸï¼Œè¿”å›žå½“å‰bufferæ± é¦–bufferã€‚
+* å…¶å®ƒè¯´æ˜Žï¼šå­˜åœ¨å‡½æ•°é‡å…¥çš„æƒ…å†µä¸‹ï¼Œè¿”å›žå€¼ä¸èƒ½ä½œä¸ºbufferé“¾çš„é¦–åœ°å€è¿›è¡Œè®¡ç®—ã€‚
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨  
+* 2014/03/18       V1.0                        åˆ›å»º  
 **************************************************************************/
 BYTE* Buffer_Insert(BYTE ucPoolId,BYTE *pucBuffer);
 
 /**************************************************************************
-* º¯ÊýÃû³Æ£ºBYTE* Buffer_GetHeader(BYTE ucPoolId)
-* ¹¦ÄÜÃèÊö£º´ÓbufferÁ´ÖÐµÚÒ»¸öbuffer¡£
-* ÊäÈë²ÎÊý£ºBYTE ucPoolId : pool Id.
-* Êä³ö²ÎÊý£ºÎÞ
-* ·µ »Ø Öµ£ºNULL  : »ñÈ¡bufferÊ§°Ü
-                    »ñÈ¡³É¹¦£¬·µ»Øµ±Ç°buffer¡£
-* ÆäËüËµÃ÷£º
-* ÐÞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ÐÞ¸ÄÈË          ÐÞ¸ÄÄÚÈÝ
+* å‡½æ•°åç§°ï¼šBYTE* Buffer_GetHeader(BYTE ucPoolId)
+* åŠŸèƒ½æè¿°ï¼šä»Žbufferé“¾ä¸­ç¬¬ä¸€ä¸ªbufferã€‚
+* è¾“å…¥å‚æ•°ï¼šBYTE ucPoolId : pool Id.
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å›ž å€¼ï¼šNULL  : èŽ·å–bufferå¤±è´¥
+                    èŽ·å–æˆåŠŸï¼Œè¿”å›žå½“å‰bufferã€‚
+* å…¶å®ƒè¯´æ˜Žï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨  
+* 2014/03/18       V1.0                        åˆ›å»º  
 **************************************************************************/
 BYTE* Buffer_Get(BYTE ucPoolId);
 
 /**************************************************************************
-* º¯ÊýÃû³Æ£ºVOID Buffer_Pool_Quit(VOID)
-* ¹¦ÄÜÃèÊö£ºrelease all malloc resources.
-* ÊäÈë²ÎÊý£ºÎÞ
-* Êä³ö²ÎÊý£ºÎÞ
-* ·µ »Ø Öµ£ºÎÞ
-* ÆäËüËµÃ÷£º
-* ÐÞ¸ÄÈÕÆÚ        °æ±¾ºÅ     ÐÞ¸ÄÈË          ÐÞ¸ÄÄÚÈÝ
+* å‡½æ•°åç§°ï¼šVOID Buffer_Pool_Quit(VOID)
+* åŠŸèƒ½æè¿°ï¼šrelease all malloc resources.
+* è¾“å…¥å‚æ•°ï¼šæ— 
+* è¾“å‡ºå‚æ•°ï¼šæ— 
+* è¿” å›ž å€¼ï¼šæ— 
+* å…¶å®ƒè¯´æ˜Žï¼š
+* ä¿®æ”¹æ—¥æœŸ        ç‰ˆæœ¬å·     ä¿®æ”¹äºº          ä¿®æ”¹å†…å®¹
 * ------------------------------------------------------------------------
-* 2014/03/18       V1.0                        ´´½¨  
+* 2014/03/18       V1.0                        åˆ›å»º  
 **************************************************************************/
 VOID Buffer_Pool_Quit(VOID);
 
