@@ -76,7 +76,7 @@ extern "C" {
                                                          request within 120 seconds of the last correctly received message frame, \
                                                          the server shall terminate the connection by sending a DISCONNECT_REQUEST to
                                                          the client’s control endpoint. */
-#define CONNECT_STATUS_CYCLE                 (20000) /* 20 seconds every heart beat. */
+#define CONNECT_STATUS_CYCLE                 (50000) /* 20 seconds every heart beat. */
     /* The start port number for control&data endpoint. */
 #define KNX_IP_PORT_NUMBER                   (3671)        /* port number used for tcp/ip */
 #define KNX_IP_PORT_NUM_HI                   0x0E
